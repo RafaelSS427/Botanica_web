@@ -1,0 +1,44 @@
+body{
+    background: rgb(37, 37, 37);
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+
+.container{
+    color: white;
+}
+
+.index{
+    width: 100vw;/*Ocupar todo el ancho del dispositivo*/
+    height: 100vh;/*Ocupar todo el largo del dispositivo*/
+}
+
+.masthead{
+    color: white;
+    min-height: 30rem;
+    width: 100%;
+    height: 100%;
+    padding-top: 8rem;
+    background: rgb(37, 37, 37); /*url('/img/font.jpg');*/
+    background-position: center center;
+    background-repeat: no-repeat;/*Ocupe todo el ancho disponible*/
+    background-size: cover;
+}
+
+.masthead h1{
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+}
+
+header .container{
+    color: white;
+}
+
+@media (min-width: 992px){/*Cuando el dispositivo sea de este tamaño has esto*/
+    .masthead h1{
+        font-size: 5.5rem;
+    }
+}

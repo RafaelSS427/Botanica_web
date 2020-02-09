@@ -1,0 +1,71 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header text-center bg-dark">
+                    <h3>Editar Producto</h3>
+                </div>
+
+                <div class="card-body">
+                     <form action="/editarProducto/{{producto.id_producto}}" enctype="multipart/form-data" method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Nombre producto" name="nombre_producto"
+                                autofocus value="{{producto.nombre_producto}}">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" name="caracteristica_producto" cols="2" rows="2"
+                                placeholder="Caracteristica del producto">{{producto.caracteristica_producto}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="number" name="precio" placeholder="Precio del producto" value="{{producto.precio}}">
+                        </div>
+
+                        <hr>
+
+                        <div class="form-group">
+                            <label for="nombreImagen">Nombre Imagen: </label>
+                            <input class="form-control" type="text" name="temp" id="nombreImagen" value="{{producto.imagen_producto}}" readonly>
+                        </div>
+
+                        <div class="form-group text-left">
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input name="imagen_productoE" type="file" class="custom-file-input" id="inputFile">
+                                    <label class="custom-file-label" for="inputGroupFile02"
+                                        aria-describedby="inputGroupFileAddon02"
+                                        data-browse="Seleccionar imagen">Cambiar...</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="form-group">
+                            <select name="id_cp2" class="form-control">
+                                <option value="{{producto.id_cp}}" selected>{{producto.nombre_cp}}</option>
+                                {{#each categorias}}
+                                <option value="{{id_cp}}">{{nombre_cp}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">¡Editar Producto!</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+        var fileName = document.getElementById("inputFile").files[0].name;
+        var nextSibling = e.target.nextElementSibling
+        nextSibling.innerText = fileName
+    })
+</script>

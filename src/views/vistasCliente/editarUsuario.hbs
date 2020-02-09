@@ -1,0 +1,40 @@
+{{guardarValor false}}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center bg-dark">
+                <div class="card-header">
+                    <h3>Editar Información</h3>
+                </div>
+
+                <div class="card-body">
+                    <form action="/editarUser/{{user.id_user}}" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nombre_user" placeholder="Ingrese nombre" value="{{user.nombre_user}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="apellido_user" placeholder="Ingrese apellido" value="{{user.apellido_user}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="targeta_user" placeholder="Ingrese número de targeta" value="{{user.targeta_user}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="dir_user" placeholder="Ingrese su dirección" value="{{user.dir_user}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="tel_user" placeholder="Ingrese número de teléfono" value="{{user.tel_user}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="cedula_user" placeholder="Ingrese número de cedula" value="{{user.cedula_user}}">
+                        </div>
+
+                        <div class="form-group">
+                            <!--<a href="/editarUser/{{id_user}}" class="btn btn-success btn-block">¡Editar!</a>-->
+                            <button class="btn btn-success btn-block">¡Editar!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+{{guardarValor estado}}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center bg-dark">
+                <div class="card-body">
+                    <h3>Información</h3>
+                    <hr>
+                    <h5>Nombre</h5>
+                    <h6>{{user.nombre_user}} {{user.apellido_user}}</h6>
+                    <hr>
+                    <h5>Targeta</h5>
+                    <h6>{{user.targeta_user}}</h6>
+                    <hr>
+                    <h5>Dirección</h5>
+                    <h6>{{user.dir_user}}</h6>
+                    <hr>
+                    <h5>Teléfono</h5>
+                    <h6>{{user.tel_user}}</h6>
+                    <hr>
+                    <h5>Cedula</h5>
+                    <h6>{{user.cedula_user}}</h6>
+
+                    <hr>                    
+                    <a href="/editarUser" class="btn btn-outline-success">
+                        Editar información
+                    </a>
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
