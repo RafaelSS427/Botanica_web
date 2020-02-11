@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-02-2020 a las 16:43:18
+-- Tiempo de generación: 11-02-2020 a las 01:38:29
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -183,6 +183,7 @@ CREATE TABLE `compras_estaticasdos` (
   `username_user` varchar(30) DEFAULT NULL,
   `targeta_user` varchar(30) DEFAULT NULL,
   `cedula_user` varchar(30) DEFAULT NULL,
+  `id_producto` int(11) DEFAULT NULL,
   `nombre_producto` varchar(30) DEFAULT NULL,
   `precio` int(11) DEFAULT NULL,
   `nombre_cp` varchar(30) DEFAULT NULL,
@@ -194,17 +195,15 @@ CREATE TABLE `compras_estaticasdos` (
 -- Volcado de datos para la tabla `compras_estaticasdos`
 --
 
-INSERT INTO `compras_estaticasdos` (`id_compra`, `id_user`, `username_user`, `targeta_user`, `cedula_user`, `nombre_producto`, `precio`, `nombre_cp`, `fecha_compra`, `id_cp2`) VALUES
-(27, 3, 'MariaP', '123456785', '702700601', 'Diente de Leon', 4250, 'Plantas', '2020-02-09 04:28:53', 2),
-(28, 3, 'MariaP', '123456785', '702700601', 'Plato Maceta', 5100, 'Macetas', '2020-02-09 04:28:56', 1),
-(29, 3, 'MariaP', '123456785', '702700601', 'Tierra para Macetas', 5000, 'Tierra', '2020-02-09 04:29:01', 3),
-(30, 3, 'MariaP', '123456785', '702700601', 'Fertilizante granulado', 8000, 'Fertilizantes', '2020-02-09 04:29:04', 5),
-(31, 3, 'MariaP', '123456785', '702700601', 'Fertilizante granulado', 8000, 'Fertilizantes', '2020-02-09 04:29:05', 5),
-(32, 4, 'Mario2k', '000000002', '702900602', 'Fertilizante granulado', 8000, 'Fertilizantes', '2020-02-09 04:29:33', 5),
-(33, 4, 'Mario2k', '000000002', '702900602', 'Maceta Ivory', 20100, 'Macetas', '2020-02-09 04:29:38', 1),
-(34, 4, 'Mario2k', '000000002', '702900602', 'Maceta Ivory', 20100, 'Macetas', '2020-02-09 04:29:39', 1),
-(35, 4, 'Mario2k', '000000002', '702900602', 'Semillas de Papaya', 3500, 'Semillas', '2020-02-09 04:29:44', 4),
-(36, 4, 'Mario2k', '000000002', '702900602', 'Semillas de Papaya', 3500, 'Semillas', '2020-02-09 04:29:45', 4);
+INSERT INTO `compras_estaticasdos` (`id_compra`, `id_user`, `username_user`, `targeta_user`, `cedula_user`, `id_producto`, `nombre_producto`, `precio`, `nombre_cp`, `fecha_compra`, `id_cp2`) VALUES
+(1, 3, 'MariaP', '123456785', '702700601', 7, 'Maceta Ivory', 20100, 'Macetas', '2020-02-11 00:32:49', 1),
+(2, 3, 'MariaP', '123456785', '702700601', 3, 'Fertilizante granulado', 8000, 'Fertilizantes', '2020-02-11 00:32:59', 5),
+(3, 3, 'MariaP', '123456785', '702700601', 4, 'Semillas de Papaya', 3500, 'Semillas', '2020-02-11 00:33:05', 4),
+(4, 3, 'MariaP', '123456785', '702700601', 1, 'Diente de Leon', 4250, 'Plantas', '2020-02-11 00:33:14', 2),
+(5, 4, 'Mario2k', '000000002', '702900602', 7, 'Maceta Ivory', 20100, 'Macetas', '2020-02-11 00:33:47', 1),
+(6, 4, 'Mario2k', '000000002', '702900602', 7, 'Maceta Ivory', 20100, 'Macetas', '2020-02-11 00:33:49', 1),
+(7, 4, 'Mario2k', '000000002', '702900602', 5, 'Tierra para Macetas', 5000, 'Tierra', '2020-02-11 00:33:54', 3),
+(8, 4, 'Mario2k', '000000002', '702900602', 4, 'Semillas de Papaya', 3500, 'Semillas', '2020-02-11 00:33:58', 4);
 
 -- --------------------------------------------------------
 
@@ -224,16 +223,14 @@ CREATE TABLE `compras_producto` (
 --
 
 INSERT INTO `compras_producto` (`id_compra`, `id_user`, `id_producto`, `fecha_compra`) VALUES
-(27, 3, 1, '2020-02-09 04:28:53'),
-(28, 3, 6, '2020-02-09 04:28:56'),
-(29, 3, 5, '2020-02-09 04:29:01'),
-(30, 3, 3, '2020-02-09 04:29:04'),
-(31, 3, 3, '2020-02-09 04:29:05'),
-(32, 4, 3, '2020-02-09 04:29:33'),
-(33, 4, 7, '2020-02-09 04:29:38'),
-(34, 4, 7, '2020-02-09 04:29:39'),
-(35, 4, 4, '2020-02-09 04:29:44'),
-(36, 4, 4, '2020-02-09 04:29:45');
+(1, 3, 7, '2020-02-11 00:32:49'),
+(2, 3, 3, '2020-02-11 00:32:59'),
+(3, 3, 4, '2020-02-11 00:33:05'),
+(4, 3, 1, '2020-02-11 00:33:14'),
+(5, 4, 7, '2020-02-11 00:33:47'),
+(6, 4, 7, '2020-02-11 00:33:49'),
+(7, 4, 5, '2020-02-11 00:33:54'),
+(8, 4, 4, '2020-02-11 00:33:58');
 
 -- --------------------------------------------------------
 
@@ -353,6 +350,7 @@ CREATE TABLE `get_compra_productos` (
 ,`username_user` varchar(60)
 ,`targeta_user` varchar(16)
 ,`cedula_user` varchar(25)
+,`id_producto` int(11)
 ,`nombre_producto` varchar(50)
 ,`precio` int(11)
 ,`nombre_cp` varchar(50)
@@ -481,6 +479,7 @@ CREATE TABLE `sessions` (
 
 INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
 ('2UKVRXctrCqNJrn78LTDe2TsHrj1JEos', 1581317285, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{},\"admin\":true,\"passport\":{\"user\":14}}'),
+('7hnyzopvxu90I1Xa06ilp5u71HgijTv2', 1581467845, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
 ('BADtSH5LhE0Ti9rexYVHeFBB8dtsrWSV', 1581309958, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
 ('oAaWqy6v2Jc1Z1TYuZg-t900l5zJnJpU', 1581302143, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
 ('q4ouRSU7ZNc0GfRctcrTuU67Zg4Rg1W5', 1581302132, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{},\"admin\":true,\"passport\":{\"user\":14}}'),
@@ -611,7 +610,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `get_compra_productos`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `get_compra_productos`  AS  select `compras_producto`.`id_compra` AS `id_compra`,`users`.`id_user` AS `id_user`,`users`.`username_user` AS `username_user`,`users`.`targeta_user` AS `targeta_user`,`users`.`cedula_user` AS `cedula_user`,`producto`.`nombre_producto` AS `nombre_producto`,`producto`.`precio` AS `precio`,`categoria_producto`.`nombre_cp` AS `nombre_cp`,`compras_producto`.`fecha_compra` AS `fecha_compra`,`producto`.`id_cp2` AS `id_cp2` from (((`compras_producto` join `users`) join `producto`) join `categoria_producto`) where ((`compras_producto`.`id_user` = `users`.`id_user`) and (`compras_producto`.`id_producto` = `producto`.`id_producto`) and (`producto`.`id_cp2` = `categoria_producto`.`id_cp`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `get_compra_productos`  AS  select `compras_producto`.`id_compra` AS `id_compra`,`users`.`id_user` AS `id_user`,`users`.`username_user` AS `username_user`,`users`.`targeta_user` AS `targeta_user`,`users`.`cedula_user` AS `cedula_user`,`producto`.`id_producto` AS `id_producto`,`producto`.`nombre_producto` AS `nombre_producto`,`producto`.`precio` AS `precio`,`categoria_producto`.`nombre_cp` AS `nombre_cp`,`compras_producto`.`fecha_compra` AS `fecha_compra`,`producto`.`id_cp2` AS `id_cp2` from (((`compras_producto` join `users`) join `producto`) join `categoria_producto`) where ((`compras_producto`.`id_user` = `users`.`id_user`) and (`compras_producto`.`id_producto` = `producto`.`id_producto`) and (`producto`.`id_cp2` = `categoria_producto`.`id_cp`)) ;
 
 -- --------------------------------------------------------
 
@@ -746,7 +745,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `compras_producto`
 --
 ALTER TABLE `compras_producto`
-  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_fact`

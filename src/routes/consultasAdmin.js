@@ -22,9 +22,9 @@ routes.get('/reporteGeneral', isLoggedInAdmin, async (req, res) => {
 routes.get('/productosMasVendidos', isLoggedInAdmin, async (req, res) => {
     const titulo = 'Productos Más Vendidos'
     const desc = 'Producto más vendido: '
-    const compras = await pool.query('SELECT COUNT(nombre_producto) AS numero, nombre_producto FROM compras_estaticasdos GROUP BY nombre_producto ORDER BY COUNT(nombre_producto) DESC');
+    const compras = await pool.query('SELECT COUNT(id_producto) AS numero, nombre_producto,nombre_cp FROM compras_estaticasdos GROUP BY nombre_producto ORDER BY COUNT(nombre_producto) DESC LIMIT 5');
 
-    const limit = await pool.query('SELECT COUNT(nombre_producto) AS numero, nombre_producto FROM compras_estaticasdos GROUP BY nombre_producto ORDER BY COUNT(nombre_producto) DESC LIMIT 1');
+    const limit = await pool.query('SELECT COUNT(id_producto) AS numero, nombre_producto,nombre_cp FROM compras_estaticasdos GROUP BY nombre_producto ORDER BY COUNT(nombre_producto) DESC LIMIT 1');
 
     console.log(limit[0]);
 
@@ -37,9 +37,9 @@ routes.get('/productosMasVendidos', isLoggedInAdmin, async (req, res) => {
 routes.get('/productosMenosVendidos', isLoggedInAdmin, async (req, res) => {
     const titulo = 'Productos Menos Vendidos'
     const desc = 'Producto menos vendido: '
-    const compras = await pool.query('SELECT COUNT(nombre_producto) AS numero, nombre_producto FROM compras_estaticasdos GROUP BY nombre_producto ORDER BY COUNT(nombre_producto) ASC');
+    const compras = await pool.query('SELECT COUNT(id_producto) AS numero, nombre_producto,nombre_cp FROM compras_estaticasdos GROUP BY nombre_producto ORDER BY COUNT(nombre_producto) ASC LIMIT 5');
 
-    const limit = await pool.query('SELECT COUNT(nombre_producto) AS numero, nombre_producto FROM compras_estaticasdos GROUP BY nombre_producto ORDER BY COUNT(nombre_producto) ASC LIMIT 1');
+    const limit = await pool.query('SELECT COUNT(id_producto) AS numero, nombre_producto,nombre_cp FROM compras_estaticasdos GROUP BY nombre_producto ORDER BY COUNT(nombre_producto) ASC LIMIT 1');
 
     console.log(limit[0]);
 
