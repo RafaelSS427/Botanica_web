@@ -96,6 +96,8 @@ routes.post('/agregarProducto', uploadP.single('imagen_producto'), async (req, r
 
     await pool.query('INSERT INTO producto SET ?', [newProducto]);
     //res.send('recibido');
+    
+    req.flash('message', '¡Producto agregado!');
     res.redirect('/listaProductos');//Aun no existe
 });
 
@@ -109,6 +111,8 @@ routes.get('/listaProductos', isLoggedInAdmin, async (req, res) => {
 routes.get('/eliminarProducto/:id', isLoggedInAdmin, async (req, res) => {
     const id_producto = req.params.id;
     await pool.query('DELETE FROM producto WHERE id_producto = ?', [id_producto]);
+    
+    req.flash('message', '¡Producto eliminado!');
     res.redirect('/listaProductos');
 });
 
@@ -189,7 +193,7 @@ routes.post('/agregarCategoria', uploadC.single('foto_cp'), async (req, res) => 
 
     await pool.query('INSERT INTO categoria_producto SET ?', [newCategoria]);
 
-    
+    req.flash('message', '¡Nueva Categoria agregada!');
     res.redirect('/listaCategorias');
 });
 
@@ -233,6 +237,7 @@ routes.post('/editarCategoria/:id', uploadC.single('foto_cpE'), async (req, res)
 
     await pool.query('UPDATE categoria_producto SET ? WHERE id_cp = ?', [valueCat, id_cp]);
     
+    req.flash('message', '¡Categoria editada!');
     res.redirect('/listaCategorias');
 });
 
